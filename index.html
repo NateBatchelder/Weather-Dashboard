@@ -4,25 +4,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="resetstyleheet" href="./assets/styles/reset.css"> -->
+    <!-- reset css -->
+    <link rel="resetstyleheet" href="./assets/styles/reset.css">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- mystyles -->
     <link rel="stylesheet" href="./assets/styles/mystyles.css" />
-
-    <script src="https://kit.fontawesome.com/57d0cf360e.js" crossorigin="anonymous"></script>
+    
+    <!-- font awesome removed in favor of bootstrap icons for main branch -->
+    <!-- font awesome -->
+    <!-- <script src="https://kit.fontawesome.com/57d0cf360e.js" crossorigin="anonymous"></script> -->
+    
     <title>Weather-Dashboard</title>
   </head>
 
   <!-- body -->
   <body>
+    <!-- Navbar content -->
+    <nav class="navbar sticky-top navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">Weather Dashboard</a>
+            <form class="d-flex">
+                <input class="form-control me-2" id="search" type="search" placeholder="Enter City" aria-label="Search" autocomplete="off">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
     <!-- main -->
     <main>
-      <div class="container" id="container">
-        <div class="app-title">
-          <p>Weather App Practice</p>
-          <input
-            id="search"
-            type="text"
-            placeholder="Enter City"
-            autocomplete="off"/>
 
             <div class="location-icon">
                 <img src="./assets/images/icons/search-location-solid.svg" alt=""/>
@@ -50,7 +59,37 @@
 
     <!-- footer -->
     <footer>
-
+        <!-- footer container main left -->
+        <div class="container">
+            <div class="footer-content">
+            <div class="footer-title">
+                <p>Weather App Practice</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=fffX2ge3wHs" target="_blank" alt="YouTube tutorial by Simplilearn on creating a weather app"></a>
+                    <p>YouTube tutorial by Simplilearn on creating a weather app</p>
+                </li>
+                <li>
+                    <a href="https://github.com/NateBatchelder/weather-app-practice" target="_blank" alt="Github repository for this project"></a>
+                    <p>Github repository for this project</p>
+                </li>
+            </ul>
+        </div>
+        <!-- footer container asside right -->
+        <div class="footer-aside">
+            <div class="container">
+                <ul>
+                    <li>
+                        <a href="https://www.linkedin.com/in/nate-batchelder-a8a8b5a9/" target="_blank" alt="LinkedIn profile for Nate Batchelder"></a>
+                        <p>LinkedIn profile for Nate Batchelder</p>
+                    </li>
+                </ul>
+                <h2>Desigined and Built by Nate Batchelder</h2>
+                <p>&copy; 2021 Forked Lightning, LLC</p>
+            </div>
+        </div>
     </footer>
 
     <!-- script -->
