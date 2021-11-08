@@ -20,77 +20,143 @@
 
   <!-- body -->
   <body>
-    <!-- Navbar content -->
-    <nav class="navbar sticky-top navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand">Weather Dashboard</a>
-            <form class="d-flex">
-                <input class="form-control me-2" id="search" type="search" placeholder="Enter City" aria-label="Search" autocomplete="off">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
+    <header>
+    </header>
+
+    <nav>
     </nav>
-    <!-- main -->
-    <main>
-
-            <div class="location-icon">
-                <img src="./assets/images/icons/search-location-solid.svg" alt=""/>
-          </div>
+    
+    <main class="container">
+      <section class="row">
+        <!-- this is first element on the page. is page wide -->
+        <div class="col-12 flex">
+          <figure class="text-center">
+            <blockquote class="blockquote">
+              <h1>
+                <p>Weather Dashboard</p>
+              </h1>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              A fantastic application to find the weather in a user selected city
+            </figcaption>
+          </figure>
         </div>
+      </section>
+      
+      <!-- this is principal section of the applicaiton -->
+      <section class="row">
+        <!-- this is second element on the page. it contains two columns that are responsive -->
+        <div class="column">
+          <section class="row">
+            <!-- this is the first column, on the left for desktop, stacked on top for mobile  -->
+            <div class="col-6 col-md-4">
+              <p>left column 
+              </p>
+              <p>.col-6 .col-md-4
+              </p>
+              <div class="location-icon">
+                  <img src="./assets/images/icons/search-location-solid.svg" alt=""/>
+              </div>
+            </div>
+            
+            <!-- this is the second column, on the right for desktop, stacked on the bottom for mobile -->
+            <div class="col-md-8">
+              <p>right column                
+              </p>
+              <p>.col-md-8
+              </p>
+              <div class="notification"></div>
+              <div class="weather-container">
+              <div class="weather-icon">
+                <img src="./assets/images/icons/unknown.png" alt="" />
+              </div>
 
-        <div class="notification"></div>
-        <div class="weather-container">
-          <div class="weather-icon">
-            <img src="./assets/images/icons/unknown.png" alt="" />
-          </div>
-
-          <div class="temperature-value">
-            <p>-*<span>C</span></p>
-          </div>
-          <div class="temperature-description">
-            <p>-</p>
-          </div>
-          <div class="location">
-            <p>-</p>
-          </div>
+              <div class="temperature-value">
+                <p>-*<span>C</span></p>
+              </div>
+              <div class="temperature-description">
+                <p>-</p>
+              </div>
+              <div class="location">
+                <p>-</p>
+              </div>
+            </div>
         </div>
-      </div>
     </main>
 
     <!-- footer -->
     <footer>
-        <!-- footer container main left -->
-        <div class="container">
-            <div class="footer-content">
-            <div class="footer-title">
-                <p>Weather App Practice</p>
-            </div>
-            <div class="footer-links">
-                <ul>
-                <li>
-                    <a href="https://www.youtube.com/watch?v=fffX2ge3wHs" target="_blank" alt="YouTube tutorial by Simplilearn on creating a weather app"></a>
-                    <p>YouTube tutorial by Simplilearn on creating a weather app</p>
-                </li>
-                <li>
-                    <a href="https://github.com/NateBatchelder/weather-app-practice" target="_blank" alt="Github repository for this project"></a>
-                    <p>Github repository for this project</p>
-                </li>
+      <div class="container" id="footer">
+      <div class="row">
+        <!-- first col -->
+        <div class="col" id="footer-title">
+          <p>1 of 2
+          </p>
+          <p>Weather Dashboard
+          </p>
+          <div class="footer-links">
+            <ul>
+              <li>
+                <a href="https://www.youtube.com/watch?v=fffX2ge3wHs" target="_blank" alt="YouTube tutorial by Simplilearn on creating a weather app"></a>
+                <p>YouTube tutorial by Simplilearn on creating a weather app</p>
+              </li>
+              <li>
+                <a href="https://github.com/NateBatchelder/weather-app-practice" target="_blank" alt="Github repository for this project"></a>
+                <p>Github repository for this project</p>
+              </li>
             </ul>
+          </div>
         </div>
-        <!-- footer container asside right -->
-        <div class="footer-aside">
-            <div class="container">
-                <ul>
-                    <li>
-                        <a href="https://www.linkedin.com/in/nate-batchelder-a8a8b5a9/" target="_blank" alt="LinkedIn profile for Nate Batchelder"></a>
-                        <p>LinkedIn profile for Nate Batchelder</p>
-                    </li>
-                </ul>
-                <h2>Desigined and Built by Nate Batchelder</h2>
-                <p>&copy; 2021 Forked Lightning, LLC</p>
-            </div>
+          
+        <!-- second col -->
+        <div class="col" id="author-info">
+          <p>2 of 2
+          </p>
+          <ul>
+            <li>
+              <a href="https://www.linkedin.com/in/nate-batchelder-a8a8b5a9/" target="_blank" alt="LinkedIn profile for Nate Batchelder"></a>
+              <p>LinkedIn profile for Nate Batchelder</p>
+              </li>
+          </ul>
+            
+          <h2>Desigined and Built by Nate Batchelder</h2>
+          <p>&copy; 2021 Forked Lightning, LLC</p>
         </div>
+      </div>
     </footer>
+
+
+      
+
+
+    
+    
+    
+    
+    
+    
+      <!-- <form class="row row-cols-lg-auto g-3 align-items-center">
+        <div class="col-12">
+          <label class="visually-hidden" for="inlineFormInputCitySearch">City Search </label>
+          
+          <div class="input-group w-50">
+                        <span class="input-group-text" id="basic-addon1">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+          </svg>
+                        </span>
+                        <input type="text" class="form-control" placeholder="City Search" aria-labelledby="city search" aria-describedby="city search field">
+        </form> -->
+
+
+ 
+
+ 
+
+  
+
+
+
 
     <!-- script -->
     <script src="assets/scripts/app.js"></script>
