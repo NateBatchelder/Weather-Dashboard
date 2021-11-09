@@ -1,3 +1,8 @@
+.main {
+  margin-top: 5 !important;
+  z-index: 100;
+}
+
 body {
   background-image: url("../images/4BE5E02A-40E8-4AC6-981E-CF09ED8E5B14_1_105_c.jpeg");
   background-position: center center;
@@ -7,6 +12,7 @@ body {
   min-width: 100%;
   min-height: 100%;
   background-attachment: fixed;
+  z-index: 1;
 }
 
 #container {
