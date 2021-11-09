@@ -38,6 +38,7 @@
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="https://bootcamp.berkeley.edu/coding/">UC Berkeley Extension</a>
             </li>
+            <!-- todo how about a 'medium' link? -->
           </ul> 
         </div>
       </div>
@@ -66,13 +67,15 @@
           <section class="row">
             <!-- this is the first column, on the left for desktop, stacked on top for mobile  -->
             <div class="col-lg-4 col-md-12 bg-light border border-5 border border-primary p-2">
-              <p>left column 
-              </p>
-              
-              <div class="location-icon">
-                  <img src="./assets/images/icons/search-location-solid.svg" alt=""/>
+              <h2 class="text-center">Select a City</h2>
+              <!-- todo search bar -->
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Enter city name" aria-label="User input for city search function" aria-describedby="button-addon">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">SEARCH</button>
               </div>
             </div>
+            <!-- todo stacked search history using local storage -->
+
             
             <!-- this is the second column, on the right for desktop, stacked on the bottom for mobile -->
             <div class="col-lg-7 col-md-12 offset-lg-1 bg-light border border-5 border border-primary p-2">
@@ -105,28 +108,19 @@
 
             <!-- first col -->
             <div class="col" id="footer-title">
-              of 2
-            </p>
-            <p>Weather Dashboard
-            </p>
-            <div class="footer-links">
-              <ul>
-                <li>
-                  <a href="https://www.youtube.com/watch?v=fffX2ge3wHs" target="_blank" alt="YouTube tutorial by Simplilearn on creating a weather app"></a>
-                  <p>YouTube tutorial by Simplilearn on creating a weather app</p>
-                </li>
-                <li>
-                  <a href="https://github.com/NateBatchelder/weather-app-practice" target="_blank" alt="Github repository for this project"></a>
-                  <p>Github repository for this project</p>
-                </li>
-              </ul>
+              <h5>Weather Dashboard</h5>
+              <p>Created as part of UC Berkeley Full Stack Bootcamp curriculum. Endless thanks for the guidance and support of the faculty, tutors, and my classmates.</p>
+              <div class="d-grid gap-2 col-4 mx-auto">
+                <a class="btn btn-secondary" href="https://github.com/NateBatchelder/Weather-Dashboard" role="button">GitHub Repository</a>
+              </div>
+              </br>
+              <p>Shout-out to the content creators of YouTube who have taken the time to share their knowledge and experience with aspiring developers. I would like to specifically recognize <a href="https://www.youtube.com/channel/UCsvqVGtbbyHaMoevxPAq9Fg" alt="Link to YouTube creator page" class="link">Simplilearn</a> for their '<a href="https://www.youtube.com/watch?v=fffX2ge3wHs" alt="Link to YouTube tutorial" class="link">How To Create A Weather App In JavaScript</a>' tutorial.</p>
             </div>
-          </div>
           
           <!-- second col -->
           <div class="col" id="author-info">
-            <p>2 of 2
-            </p>
+            <h5>Desigined and Built by Nate Batchelder</h5>
+            
             <ul>
               <li>
                 <a href="https://www.linkedin.com/in/nate-batchelder-a8a8b5a9/" target="_blank" alt="LinkedIn profile for Nate Batchelder"></a>
@@ -134,7 +128,6 @@
               </li>
             </ul>
             
-            <h2>Desigined and Built by Nate Batchelder</h2>
             <p>&copy; 2021 Forked Lightning, LLC</p>
           </div>
           

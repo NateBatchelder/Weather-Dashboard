@@ -47,6 +47,7 @@ function setPosition(position) {
   getWeather(latitude, longitude);
 }
 
+// todo why is event never read?
 locationIcon.addEventListener("click", function (event) {
   console.log("hey");
   getWeather(latitude, longitude);
