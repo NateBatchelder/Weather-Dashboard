@@ -1,12 +1,7 @@
 # Weather-Dashboard
 
 
-https://getbootstrap.com/docs/4.0/getting-started/introduction/
-
-
-https://www.youtube.com/watch?v=fffX2ge3wHs
-
-  ## Description
+ ## Description
 
   Weather Dashboard is a web application that displays the current weather conditions for a city given a user's input.  This application was developed as part of the UC Berkeley Full Stack Boot Camp.  
   ## Table of Contents
