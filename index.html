@@ -6,18 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- reset css -->
     <link rel="resetstyleheet" href="./assets/styles/reset.css">
-    <!-- todo comment -->
+    <!-- ajax -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <!-- todo comment -->
+    <!-- jquery -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- mystyles -->
     <link rel="stylesheet" href="./assets/styles/mystyles.css" />
     
-    <!-- font awesome removed in favor of bootstrap icons for main branch -->
-    <!-- font awesome -->
-    <!-- <script src="https://kit.fontawesome.com/57d0cf360e.js" crossorigin="anonymous"></script> -->
     
     <title>Weather Dashboard</title>
   </head>
@@ -43,13 +40,16 @@
               <a class="nav-link" aria-current="page" href="https://bootcamp.berkeley.edu/coding/">UC Berkeley Extension</a>
             </li>
             <!-- todo how about a 'medium' link? -->
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="https://medium.com/@forked-lightning">Medium</a>
+            </li>
           </ul> 
         </div>
       </div>
     </nav>
     
     <!-- main content -->
-    <main class="container overflow-hidden d-grid gap-5" id="main">
+    <main class="container overflow-hidden my-5 d-grid gap-5" id="main">
       <section class="row border border-5 border-primary bg-white p-2">
         <!-- this is first element on the page. is page wide -->
         <div class="col-12 flex">
@@ -71,13 +71,21 @@
           <section class="row">
             <!-- this is the first column, on the left for desktop, stacked on top for mobile  -->
             <div class="col-lg-4 col-md-12 bg-light border border-5 border border-primary p-2">
-              <h2 class="text-center">Select a City</h2>
-              <!-- todo search bar -->
-              <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Enter city name" aria-label="User input for city search function" aria-describedby="button-addon2" id="inputKey">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">SEARCH</button>
-              </div>
-            <!-- todo stacked search history using local storage -->
+              <!-- search bar -->
+              <form class="row g-3 needs-validation" novalidate>
+                <div class="col">
+                  <label for="validationCustom03" class="form-label">Enter a City</label>
+                  <input type="text" class="form-control" placeholder="search here" aria-label="User input for city search function" aria-describedby="button-addon2" id="inputKey">
+                  <div class="invalid-feedback">
+                    Please enter a city.
+                  </div>
+                  <!-- search button -->
+                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">SEARCH</button>
+                </div>
+              </form>
+              
+            <!-- stacked search history using local storage -->
+            <!-- todo would it be possible to have these results go in reverse order? newest on top?!? -->
             <row>
               <div class="column">
                 <h6>Previously Searched Cities</h6>
@@ -90,7 +98,7 @@
             
             <!-- this is the second column, on the right for desktop, stacked on the bottom for mobile -->
             <div class="col-lg-7 col-md-12 offset-lg-1 bg-light border border-5 border border-primary p-2" id="Jumbotron">
-              <!-- todo comment -->
+              <!-- weather result field -->
               <div id="todayInfo" class="container-fluid">
                 <h3 class="display-1 text-center" id="jumbotronHeader">
                   <span id="city"></span><br/>
@@ -99,61 +107,65 @@
                   </h4>
                   <img src=""  alt="" id="jumboIcon"></h1>
                 </h3>
-                <!-- todo comment -->
+                <!-- weather result data-->
                 <p id="todayTemp">Temperature:</p>
                 <p id="todayHumidity">Humidity:</p>
                 <p id="todayWind">Speed:</p>
                 <p id="todayUV">UV Index:</p>
               </div>
 
-              <!-- todo comment -->
+              <!-- five day results container-->
               <div id="fiveForecast" class="container-fluid">
                         <h2 class="col-12 text-center">
                               Five day Forecast:</h2>
               </div>
-
+              <!-- five day content results-->
               <div class="container-fluid col-12 col-sm-12 justify-content-center" id="fiveContent">
                 <div class="row" id= "contentRow">
                 </div>
               </div>
             </div>
         </div>
-        
+      </main>
 
-        <!-- todo change this up - the container looks poor -->
-        <!-- footer -->
-        <footer class="container gy-5 border border-5 border-primary bg-white p-2">
-          <div class="row">
+ 
 
-            <!-- first col -->
-            <div class="col" id="footer-title">
-              <h5>Weather Dashboard</h5>
-              <p>Created as part of UC Berkeley Full Stack Bootcamp curriculum. Endless thanks for the guidance and support of the faculty, tutors, and my classmates.</p>
+
+      <!-- footer -->
+      <footer class="footer mt-10 bg-light">
+          <!-- first col -->
+        <div class="row justify-content-evenly">
+          <div class="col-4">
+            <div>
+              <div>
+                <h5>Weather Dashboard</h5>
+                <p>Created as part of UC Berkeley Full Stack Bootcamp curriculum. Endless thanks for the guidance and support of the faculty, tutors, and my classmates.</p>
+              </div>
               <div class="d-grid gap-2 col-4 mx-auto">
                 <a class="btn btn-secondary" href="https://github.com/NateBatchelder/Weather-Dashboard" role="button">GitHub Repository</a>
               </div>
               </br>
-              <p>Shout-out to the content creators of YouTube who have taken the time to share their knowledge and experience with aspiring developers. I would like to specifically recognize <a href="https://www.youtube.com/channel/UCsvqVGtbbyHaMoevxPAq9Fg" alt="Link to YouTube creator page" class="link">Simplilearn</a> for their '<a href="https://www.youtube.com/watch?v=fffX2ge3wHs" alt="Link to YouTube tutorial" class="link">How To Create A Weather App In JavaScript</a>' tutorial.</p>
-            </div>
-          
-          <!-- second col -->
-          <div class="col" id="author-info">
-            <h5>Desigined and Built by Nate Batchelder</h5>
-            
-            <div class="d-grid gap-2 col-4 mx-auto">
-                <a class="btn btn-secondary" href="https://www.linkedin.com/in/nate-batchelder-a8a8b5a9/" role="button">LinkedIn</a>
+              <div>
+                <p>Shout-out to the content creators of YouTube who have taken the time to share their knowledge and experience with aspiring developers. I would like to specifically recognize <a href="https://www.youtube.com/channel/UCsvqVGtbbyHaMoevxPAq9Fg" alt="Link to YouTube creator page" class="link">Simplilearn</a> for their '<a href="https://www.youtube.com/watch?v=fffX2ge3wHs" alt="Link to YouTube tutorial" class="link">How To Create A Weather App In JavaScript</a>' tutorial.</p>
               </div>
-
-            
-            
-            <p>&copy; 2021 Forked Lightning, LLC</p>
+            </div>
           </div>
-          
+              
+          <!-- second col -->
+          <div class="col-4" id="author-info">
+            <div>
+              <h5>Desigined and Built by Nate Batchelder</h5>
+            </div>
+            <div class="d-grid gap-2 col-4 mx-auto">
+              <a class="btn btn-secondary" href="https://www.linkedin.com/in/nate-batchelder-a8a8b5a9/" role="button">LinkedIn</a>
+            </div>
+            <div>
+              <p>&copy; 2021 Forked Lightning, LLC</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </footer>
-  </main>     
-
+      </footer>
+        
     <!-- script -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

@@ -34,14 +34,27 @@ var searchButton = document.getElementById("button-addon2");
 var searchCity = document.getElementById("city");
 var inputKey = document.getElementById("inputKey");
 
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
 
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
 
-// const iconElement = document.querySelector(".weather-icon");
-// const locationIcon = document.querySelector(".location-icon");
-// const tempElement = document.querySelector(".temperature-value p");
-// const descElement = document.querySelector(".temperature-description p");
-// const locationElement = document.querySelector(".location p");
-// const notificationElement = document.querySelector(".notification");
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+
 
 function makeDate() {
   for (i = 1; i < 6; i++) {
@@ -105,43 +118,19 @@ searchHistory.onclick = function(event) {
 // function createSearchHistory() {
   //   for(i)
   // }
-  searchButton.addEventListener('click', getApi);
-  searchButton.addEventListener('click', getApi5day)
-  function createSearchHistory() {
-    searchHistory.innerHTML = ''
-    for(i=0; i< prevCities.length; i++) {
-      var createButton = document.createElement('button')
-      createButton.setAttribute('class', 'btn btn-outline-secondary btn-lg col-12')
-      createButton.value = prevCities[i]
-      createButton.textContent = createButton.value
-      console.log(createButton.value)
-      searchHistory.appendChild(createButton)
-    }
+searchButton.addEventListener('click', getApi5day)
+searchButton.addEventListener('click', getApi);
+function createSearchHistory() {
+  searchHistory.innerHTML = ''
+  for(i=0; i< prevCities.length; i++) {
+    var createButton = document.createElement('button')
+    createButton.setAttribute('class', 'btn btn-outline-secondary btn-lg col-12')
+    createButton.value = prevCities[i]
+    createButton.textContent = createButton.value
+    console.log(createButton.value)
+    searchHistory.appendChild(createButton)
   }
-
-
-
-
-
-// var input = document.getElementById("search");
-// let city = "";
-// let latitude = 0.0;
-// let longitude = 0.0;
-
-// input.addEventListener("keyup", function (event) {
-//   if (event.keyCode === 13) {
-//     event.preventDefault();
-
-//     city = input.value;
-//     getSearchWeather(city);
-//     console.log(city);
-//   }
-// });
-// const weather = {};
-
-// weather.temperature = {
-//   unit: "celsius",
-// };
+}
 
 function getApi(input) {
   input = inputKey.value;
@@ -250,81 +239,3 @@ function getApi5day(input) {
       }
     });
 }
-
-
-
-// const KELVIN = 273;
-
-
-// if ("geolocation" in navigator) {
-//   navigator.geolocation.getCurrentPosition(setPosition, showError);
-// } else {
-//   notificationElement.style.display = "block";
-//   notificationElement.innerHTML = "<p>Browser doesn't Support Geolocation</p>";
-// }
-
-// todo previous get position function  
-// function setPosition(position) {
-//   let latitude = position.coords.latitude;
-//   let longitude = position.coords.longitude;
-
-//   getWeather(latitude, longitude);
-// }
-
-// todo why is event never read?
-// locationIcon.addEventListener("click", function (event) {
-//   console.log("hey");
-//   getWeather(latitude, longitude);
-// });
-
-// todo what is this function doing?
-// function showError(error) {
-//   notificationElement.style.display = "block";
-//   notificationElement.innerHTML = `<p> ${error.message} </p>`;
-// }
-
-// function getSearchWeather(city) {
-//   let api = `${baseURL}weather?q=${city}&appid=${apiKey}`;
-//   fetch(api)
-//     .then(function (response) {
-//       let data = response.json();
-//       return data;
-//     })
-//     .then(function (data) {
-//       weather.temperature.value = Math.floor(data.main.temp - KELVIN);
-//       weather.description = data.weather[0].description;
-//       weather.iconId = data.weather[0].icon;
-//       weather.city = data.name;
-//       weather.country = data.sys.country;
-//     })
-//     .then(function () {
-//       displayWeather();
-//     });
-// }
-
-// function getWeather(latitude, longitude) {
-//   let api = `${baseURL}weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
-//   fetch(api)
-//     .then(function (response) {
-//       let data = response.json();
-//       return data;
-//     })
-//     .then(function (data) {
-//       weather.temperature.value = Math.floor(data.main.temp - KELVIN);
-//       weather.description = data.weather[0].description;
-//       weather.iconId = data.weather[0].icon;
-//       weather.city = data.name;
-//       weather.country = data.sys.country;
-//     })
-//     .then(function () {
-//       displayWeather();
-//     });
-// }
-
-// function displayWeather() {
-//   iconElement.innerHTML = `<img src="icons/${weather.iconId}.png"/>`;
-//   tempElement.innerHTML = `${weather.temperature.value}*<span>C</span>`;
-//   descElement.innerHTML = weather.description;
-//   locationElement.innerHTML = `${weather.city}, ${weather.country}`;
-// }
-
